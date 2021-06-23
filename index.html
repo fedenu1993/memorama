@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="titulo">
+        <h3 class="tiempo">Tiempo: <span id="reloj"></span></h3>
+        <h3 class="ranking" onclick="ranking()">Record</h3>
+
+    </div>
+    
+    <div id="tablero">
+    </div>
+    <br>
+
+    <div class="nuevoJuego" onclick="generarTablero()">
+        Nuevo Juego 
+    </div>
+    
+    <script src="app.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

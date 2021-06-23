@@ -1,0 +1,111 @@
+:root{
+    --w: calc(70vw / 6);
+    --h: calc(70vh / 4);
+}
+*{
+    transition: all 0.5s;
+}
+body{
+    padding: 0;
+    margin: 0;
+    -webkit-perspective: 1000;
+    background: #b0e0e6;    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: calibri;
+}
+.titulo{
+    width: 80%;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.ranking{
+    cursor: pointer;
+    transition: color 1s;
+    text-shadow: 0 0 1px black;
+    background: linear-gradient(orange,darkorange);
+    padding: 1rem;
+    border-radius: 5%;
+}
+.tiempo{
+    padding: 1rem;
+}
+
+.titulo h3{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+}
+@media (max-width: 690px){
+    body{
+        background-color: black;
+    }
+    .titulo{
+        color: white;
+    }
+    .titulo h3{
+        font-size: 20px;
+    }
+}
+div{
+    display: inline-block;
+}
+.area-tarjeta, .tarjeta, .cara{
+    cursor: pointer;
+    width: var(--w);
+    min-width: 80px;
+    height: var(--h);
+}
+.tarjeta{
+    position: relative;
+    transform-style: preserve-3d;
+    /* Para poder ver cada de adelante y atras */
+    animation: iniciar 5s;
+}
+/* Para probar como se dan vuelta las cartas */
+/* .area-tarjeta:hover .tarjeta{
+    transform: rotateY(180deg);
+} */
+.cara{
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: inset 0 0 0 5px white;
+    font-size: 500%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 690px){
+    .cara{
+        font-size: 400%;
+    }
+}
+.trasera{
+    background-color: lightcyan;
+    transform: rotateY(180deg);
+}
+.superior{
+    background: linear-gradient(orange,darkorange);
+}
+.nuevoJuego{
+    cursor: pointer;
+    background: linear-gradient(orange,darkorange);
+    padding: 20px;
+    border-radius: 50px;
+    border: white 5px solid;
+    font-weight: bold;
+}
+@keyframes iniciar {
+    20%,90% {
+        transform: rotateY(180deg);
+    }
+
+    0%,100% {
+        transform: rotateY(0deg);
+    }
+}
